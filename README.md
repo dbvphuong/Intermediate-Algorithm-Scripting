@@ -38,3 +38,19 @@ for(let i = 0; i< arr3.length; i++){
 
 fearNotLetter("abce");
 ```
+
+# Search and Replace  
+```
+function myReplace(...arr) {
+var x = "";
+if(arr[1].charAt(0) === arr[1].charAt(0).toUpperCase()){
+  x = arr[2].charAt(0).toUpperCase() + arr[2].slice(1)
+}
+else{ x = arr[2]
+}
+
+var a = arr[0].replace(arr[1],x);
+  return a;
+}
+myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
+```
