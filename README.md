@@ -54,3 +54,16 @@ var a = arr[0].replace(arr[1],x);
 }
 myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
 ```
+# Convert HTML Entities  
+```
+function convertHTML(str) {
+var str1 = str.replace(/&/g,"&​amp;");
+var str2 = str1.replace(/</g,"&lt;");
+var str3 = str2.replace(/>/g,"&gt;");
+var str4 = str3.replace(/"/g,"&quot;");
+var str5 = str4.replace(/'/g,"&apos;");
+  return str5;
+}
+
+convertHTML("Dolce & Gabbana");
+```
