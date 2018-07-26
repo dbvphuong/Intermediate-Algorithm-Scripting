@@ -103,3 +103,34 @@ function sumPrimes(num) {
 
 sumPrimes(10);
 ```
+# Smallest Common Multiple  
+```
+function smallestCommons(arr) {
+    var max = Math.max(...arr);
+    var min = Math.min(...arr);
+
+    var arr1 = [];
+    for (let i = min; i <= max; i++){
+        arr1.push(i);
+    }
+
+    function BCNN(x,y){
+        var TICH = x*y;
+        while (x != y) {
+            if(x>y){
+                x = x-y;
+            }
+            else y = y-x;
+        }
+        return TICH/x;
+    }
+
+    for (let i = 1; i < arr1.length; i++){
+        [arr1[i-1], arr1[i]] = [BCNN(arr1[i-1], arr1[i]), BCNN(arr1[i-1], arr1[i])];
+    }
+
+    return arr1[arr1.length -1];
+  }
+  
+console.log(smallestCommons([1,100]));
+```
