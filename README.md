@@ -151,3 +151,19 @@ function dropElements(arr, func) {
 
 dropElements([1, 2, 3], function(n) {return n < 3; });
 ```
+# Binary Agents  
+```
+function binaryAgent(str) {
+    var arr = str.split(" ");
+    var arr1 = [];
+    for (let i = 0; i < arr.length; i++){
+        arr1.push(arr[i][0]*Math.pow(2,7) + arr[i][1]*Math.pow(2,6) + arr[i][2]*Math.pow(2,5) + arr[i][3]*Math.pow(2,4) + arr[i][4]*Math.pow(2,3) + arr[i][5]*Math.pow(2,2) + arr[i][6]*Math.pow(2,1) + arr[i][7]*Math.pow(2,0))
+    }
+    return String.fromCharCode(...arr1); // công thức chuyển số thường thành chữ
+  }
+  
+console.log(binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111"));
+```
+Cách làm:  
+-xét phần tử đầu của arr: số đầu * 2^7 + số thứ 2 * 2^6...= a.  
+-String.fromCharCode(a); dùng để chuyển số thành chữ.  
