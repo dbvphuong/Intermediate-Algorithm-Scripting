@@ -83,3 +83,23 @@ function sumFibs(num) {
   
 sumFibs(4);
 ```
+#  Sum All Primes  
+```
+function sumPrimes(num) {
+    function test(n) {
+        for (let i = 2; i < n; i++){
+            if (n%i === 0) return false;
+        }
+        return true;
+    }
+
+    var arr = [2];
+    for (let i = 3; i <= num; i+=2){
+        if (test(i) === true) arr.push(i);
+    }
+    var sum = arr.reduce((a,b) => a+b);
+    return sum;
+  }
+
+sumPrimes(10);
+```
