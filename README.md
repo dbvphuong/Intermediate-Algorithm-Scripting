@@ -67,3 +67,19 @@ var str5 = str4.replace(/'/g,"&apos;");
 
 convertHTML("Dolce & Gabbana");
 ```
+# Sum All Odd Fibonacci Numbers  
+```
+function sumFibs(num) {
+  var arr = [1,1];
+    for (let i = 2; i < num; i++){
+        arr[i] = arr[i-1] + arr[i-2];
+        arr.push(arr[i]);
+    } // số thứ i bằng số trước nó cộng với số trước trước nó rồi thêm số đó vào arr
+    arr.pop();
+    arr = arr.filter(x => x <= num && x%2 != 0);
+    var sum = arr.reduce ((a,b) => a+b);
+    return sum;
+  }
+  
+sumFibs(4);
+```
