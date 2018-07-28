@@ -167,3 +167,19 @@ console.log(binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 0
 Cách làm:  
 -xét phần tử đầu của arr: số đầu * 2^7 + số thứ 2 * 2^6...= a.  
 -String.fromCharCode(a); dùng để chuyển số thành chữ.  
+
+# Everything Be True  
+```
+function truthCheck(collection, pre) {
+    var a;
+    for (let i = 0; i < collection.length; i++){
+        if (Boolean(collection[i][pre]) === false){
+            return false;
+        }
+    }
+    return true;
+}
+
+console.log(truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex"));
+```
+Lưu ý: duyệt object là string dùng object[] chứ không đc dùng object.  
